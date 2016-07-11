@@ -11,24 +11,29 @@
 
 <body>
 
+    <section id="top-half">
+        <header>
+            <h1>Marc's Music Player<br><span id="fine-print">(using Soundcloud API)</span></h1>
+            <img src="http://cdn.pitchfork.com/news/64436/26de78d5.png" width="250" height="100" alt="" id="artwork" />
+        </header>
 
-    <header>
-        <h1>Marc's Music Player<br><span id="fine-print">(using Soundcloud API)</span></h1>
-    </header>
+        <h2>Search for a Song or Artist on Soundcloud!</h2>
+        <br>
 
-    <h2>Search for a Song or Artist on Soundcloud!</h2>
-    <br>
+        <div id="search-section">
+            <input type="search" id="search">
 
-    <input type="search" id="search">
+            <button id="og-button" onclick="audioResults()">Search</button>
+        </div>
 
-    <button onclick="audioResults()">Search</button>
+    </section>
 
     <div id="player" class="closed">
         <!--<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/154694/vinyl.png" alt="" id="record" />-->
 
         <div id="cover">
-            <img src="http://www.edmsauce.com/wp-content/uploads/2013/05/5269444_300.jpg" width="250" height="250" alt="" id="artwork" />
-            <img src="images/record-spin.gif" width="250" />
+            <!--<img src="http://cdn.pitchfork.com/news/64436/26de78d5.png" width="500" height="250" alt="" id="artwork" />-->
+            <img src="images/record-spin.gif" width="250" id="spin-record" />
             <div id="trackInfos">
                 <p class="now">NOW PLAYING</p>
                 <p id="band"></p>
