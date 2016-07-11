@@ -316,6 +316,7 @@ place all the mobile tables styles bellow this line
         margin-bottom: 1em;
         border-bottom: 2px solid gray;
         max-width: 100%;
+        height: 30px;
     }
 }
 
@@ -344,5 +345,6 @@ place all the mobile tables styles bellow this line
         margin-bottom: 1em;
         border-bottom: 2px solid gray;
         max-width: 100%;
+        height: 30px;
     }
 }
