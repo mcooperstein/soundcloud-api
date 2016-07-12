@@ -1,6 +1,6 @@
 /* -- CSS imported from example -- */
 
-
+Get rid of any of this stuff you don't need
 /*@import "compass/css3";
 html,
 body {
@@ -245,7 +245,7 @@ img {
     list-style-type: none;
 }*/
 
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 729px) { // only screen means you don't want it to do this on print. what happens on print? leave out only screen
     #search-results ul#results {
         overflow: hidden;
         margin-top: 0.5em;
