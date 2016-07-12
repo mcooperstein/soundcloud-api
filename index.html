@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Soundcloud API Project</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
+// clean up the extra whitespace
 
 </head>
 
@@ -14,7 +14,7 @@
     <section id="top-half">
         <header>
             <h1>Marc's Music Player<br><span id="fine-print">(using Soundcloud API)</span></h1>
-            <img src="http://cdn.pitchfork.com/news/64436/26de78d5.png" width="250" height="100" alt="" id="artwork" />
+            <img src="http://cdn.pitchfork.com/news/64436/26de78d5.png" width="250" height="100" alt="" id="artwork" /> // images need alt tags
         </header>
 
         <h2>Search for a Song or Artist on Soundcloud!</h2>
@@ -23,35 +23,35 @@
         <div id="search-section">
             <input type="search" id="search">
 
-            <button id="og-button" onclick="audioResults()">Search</button>
+            <button id="og-button" onclick="audioResults()">Search</button>// why are you using inline JS here? should be an event handler in the JS file
         </div>
 
     </section>
 
     <div id="player" class="closed">
         <!--<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/154694/vinyl.png" alt="" id="record" />-->
-
+// remove any commented out code you don't need
         <div id="cover">
             <!--<img src="http://cdn.pitchfork.com/news/64436/26de78d5.png" width="500" height="250" alt="" id="artwork" />-->
-            <img src="images/record-spin.gif" width="250" id="spin-record" />
+            <img src="images/record-spin.gif" width="250" id="spin-record" /> // alt tag
             <div id="trackInfos">
                 <p class="now">NOW PLAYING</p>
                 <p id="band"></p>
                 <p id="track"></p>
-
+//whitespace
                 <a href="#" id="play" class="ion-ios7-play"></a>
             </div>
         </div>
-    </div>
+    </div> // consider labeleing the closing tags to make it easier to see their all closed, like <!-- closes #player -->
 
     <div id="search-results">
         <ul id="results"></ul>
         <p id="error"></p>
     </div>
+//whitespace
 
 
-
-    <!--<script type="text/javascript">
+    <!--<script type="text/javascript"> // if it's in your js file, remove it from here. 
         function audioResults() {
             var search = document.getElementById("search").value;
             var xhr = new XMLHttpRequest();
