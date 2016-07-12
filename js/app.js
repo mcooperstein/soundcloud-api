@@ -25,7 +25,8 @@ function audioResults() {
 function displaySearchResults(songs) {
     var buildTheHtmlOutput = "";
     $.each(songs, function (index, response) {
-        var locationId = "onclick='location.href=\"" + response.permalink_url + "\"'";
+        //var locationId = "onclick='location.href=\"" + response.permalink_url + "\"'";
+        var locationId = "onclick='window.open(\"" + response.permalink_url + "\")'";
         // append li to ul
         //buildTheHtmlOutput += "<li><p>" + response.title + "<a href='response.permalink_url'/></a>" + "</p></li>";
         //buildTheHtmlOutput += "<li><a href='" + response.permalink_url + "'>" + response.title + "</a></li>";
@@ -36,7 +37,7 @@ function displaySearchResults(songs) {
         //buildTheHtmlOutput += "</a>";
         //buildTheHtmlOutput += "<a href='" + response.permalink_url + "'>";
         //buildTheHtmlOutput += "<div id='button-center'>";
-        buildTheHtmlOutput += "<button id='playButton' type='button' " + locationId + ">";
+        buildTheHtmlOutput += "<button id='playButton' type='button'" + locationId + ">";
         buildTheHtmlOutput += "&#9658; Play Track!";
         buildTheHtmlOutput += "</button>";
         //buildTheHtmlOutput += "</div>";

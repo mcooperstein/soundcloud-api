@@ -209,7 +209,9 @@ p {
 }
 
 #playButton {
+    margin-top: 1em;
     padding: 0.75em;
+    border-radius: 10px;
     font-size: 1em;
     background-color: black;
     color: white;
