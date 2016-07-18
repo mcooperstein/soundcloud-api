@@ -194,30 +194,38 @@ p {
     margin-bottom: 0.5em;
 }
 
-#search {
-    font-size: 2em;
-    width: 30%;
-    height: 1.5em;
-    text-align: center;
-    border: 2px solid black;
-}
-
 #og-button {
-    padding: 0.5em;
-    border-radius: 5px;
-    font-size: 1.5em;
-}
-
-#playButton {
-    margin-top: 1em;
-    padding: 0.75em;
+    padding: 0.25em;
     border-radius: 10px;
-    font-size: 1em;
+    font-size: 1.75em;
+    text-align: center;
     background-color: black;
     color: white;
+}
+
+.play-button {
+    margin-top: 1em;
+    padding: 0.75em 0em;
+    border-radius: 10px;
+    font-size: 1.25em;
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
     display: block;
+    text-decoration: none;
+}
+
+.close-button {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: black;
+    color: white;
 }
 
 #artwork {
@@ -236,6 +244,17 @@ img {
     display: block;
 }
 
+.embeded,
+#message {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a.page-scroll {
+    transition: all 0.5s;
+}
+
 
 /*#button-center {
     margin-left: auto;
@@ -247,7 +266,7 @@ img {
     list-style-type: none;
 }*/
 
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 815px) {
     #search-results ul#results {
         overflow: hidden;
         margin-top: 0.5em;
@@ -273,8 +292,21 @@ img {
     #search-results li p {
         padding-bottom: 1em;
         margin-bottom: 1em;
-        border-bottom: 2px solid gray;
+        border-bottom: 2px solid white;
+        color: black;
         max-width: 100%;
+    }
+    .footer {
+        width: 20%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #search {
+        font-size: 1.75em;
+        width: 60%;
+        height: 1.75em;
+        text-align: center;
+        border: 2px solid black;
     }
 }
 
@@ -292,12 +324,12 @@ Responsive styles
 place all the mobile tables styles bellow this line
 */
 
-@media only screen and (min-width: 730px) {
+@media only screen and (min-width: 816px) {
     #search-results ul#results {
         overflow: hidden;
         margin-top: 0.5em;
         list-style: none;
-        width: 90%;
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
         padding: 0;
@@ -316,9 +348,22 @@ place all the mobile tables styles bellow this line
     #search-results li p {
         padding-bottom: 1em;
         margin-bottom: 1em;
-        border-bottom: 2px solid gray;
+        border-bottom: 2px solid white;
+        color: black;
         max-width: 100%;
         height: 30px;
+    }
+    .footer {
+        width: 10%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #search {
+        font-size: 2em;
+        width: 60%;
+        height: 1.4em;
+        text-align: center;
+        border: 2px solid black;
     }
 }
 
@@ -345,7 +390,8 @@ place all the mobile tables styles bellow this line
     #search-results li p {
         padding-bottom: 1em;
         margin-bottom: 1em;
-        border-bottom: 2px solid gray;
+        border-bottom: 2px solid white;
+        color: black;
         max-width: 100%;
         height: 30px;
     }

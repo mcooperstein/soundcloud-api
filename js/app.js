@@ -1,10 +1,7 @@
 //'use strict';
 
 $(document).ready(function () {
-
-    $('#spin-record').hide();
-    $('#trackInfos').hide();
-    $('#music-player').hide();
+    $('#message').hide();
 
 });
 
@@ -29,27 +26,45 @@ function audioResults() {
     console.log(jsonParse);
     songs = jsonParse;
     displaySearchResults(songs);
+    $('#message').show();
 }
 
 // STEP 3 - using the JSON response (videos), populate the relevant part of your HTML with the variable inside the JSON
 
+/*function closeModal() {
+    $(".modal-content").hide();
+};*/
+
 function displayModal(songID) {
+
+    //$('#message').hide();
     console.log(songs);
     var buildMoreHtmlOutput = "";
     $.each(songs, function (key, value) {
         if (value.id === songID) {
+            SC.initialize({
+                client_id: "1dff55bf515582dc759594dac5ba46e9"
+            });
+            //$("#embedTrack").click(function () {
+            //var player = $("#player");
+            SC.oEmbed(value.permalink_url, {
+                maxheight: 200
+            }, function (res) {
+                $(".embeded").html(res.html);
+            });
+            //});
             /*buildMoreHtmlOutput += "<div class='header'>";
             buildMoreHtmlOutput += "<h3>" + value.title + "</h3>";
             buildMoreHtmlOutput += "</div>";*/
-            buildMoreHtmlOutput += "<div class='body'>";
-            buildMoreHtmlOutput += '<iframe src=" ' + value.permalink_url + ' " sandbox="allow-scripts allow-forms" style="border:0px #FFFFFF none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="60%" width="80%"></iframe>';
-
+            buildMoreHtmlOutput += "<div class='embeded'>";
+            //buildMoreHtmlOutput += '<iframe src=" ' + value.permalink_url + ' " sandbox="allow-scripts allow-forms" style="border:0px #FFFFFF none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="60%" width="80%"></iframe>';
             buildMoreHtmlOutput += "</div>";
-            /*buildMoreHtmlOutput += "<div class='footer'>";
-            buildMoreHtmlOutput += "<button type='button' class='btn btn-default modal-btn' data-dismiss='modal'>";
+            buildMoreHtmlOutput += "<div class='footer'>";
+            buildMoreHtmlOutput += "<button type='button' class='close-button' data-dismiss='modal'>";
+            //buildMoreHtmlOutput += "<button type='button' class='close-button' onclick='closeModal()'>";
             buildMoreHtmlOutput += "Close";
-            buildMoreHtmlOutput += "</button>"
-            buildMoreHtmlOutput += "</div>";*/
+            buildMoreHtmlOutput += "</button>";
+            buildMoreHtmlOutput += "</div>";
         }
     });
     console.log(buildMoreHtmlOutput);
@@ -79,7 +94,7 @@ function displaySearchResults(songs) {
         /*-- Trying to creat button link to modal --*/
 
 
-        buildTheHtmlOutput += "<a href='#' " + locationId + " data-toggle='modal' data-target='#modal1'>";
+        buildTheHtmlOutput += "<a class='play-button page-scroll' href='#page-top' " + locationId + " data-toggle='modal' data-target='#modal1'>";
         buildTheHtmlOutput += "&#9658; Play Track!";
         buildTheHtmlOutput += "</a>";
 
