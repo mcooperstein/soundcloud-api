@@ -1,9 +1,19 @@
+//'use strict';
+
 $(document).ready(function () {
 
     $('#spin-record').hide();
     $('#trackInfos').hide();
+    $('#music-player').hide();
 
 });
+
+/*var app = angular.module('myApp', []);
+
+angular.controller('MainController', function () {*/
+
+var songs = "";
+var songID = "";
 
 function audioResults() {
     var search = document.getElementById("search").value;
@@ -17,16 +27,45 @@ function audioResults() {
     //console.log(xhr.responseText);
     jsonParse = JSON.parse(xhr.response);
     console.log(jsonParse);
-    displaySearchResults(jsonParse);
+    songs = jsonParse;
+    displaySearchResults(songs);
 }
 
 // STEP 3 - using the JSON response (videos), populate the relevant part of your HTML with the variable inside the JSON
 
+function displayModal(songID) {
+    console.log(songs);
+    var buildMoreHtmlOutput = "";
+    $.each(songs, function (key, value) {
+        if (value.id === songID) {
+            /*buildMoreHtmlOutput += "<div class='header'>";
+            buildMoreHtmlOutput += "<h3>" + value.title + "</h3>";
+            buildMoreHtmlOutput += "</div>";*/
+            buildMoreHtmlOutput += "<div class='body'>";
+            buildMoreHtmlOutput += '<iframe src=" ' + value.permalink_url + ' " sandbox="allow-scripts allow-forms" style="border:0px #FFFFFF none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="60%" width="80%"></iframe>';
+
+            buildMoreHtmlOutput += "</div>";
+            /*buildMoreHtmlOutput += "<div class='footer'>";
+            buildMoreHtmlOutput += "<button type='button' class='btn btn-default modal-btn' data-dismiss='modal'>";
+            buildMoreHtmlOutput += "Close";
+            buildMoreHtmlOutput += "</button>"
+            buildMoreHtmlOutput += "</div>";*/
+        }
+    });
+    console.log(buildMoreHtmlOutput);
+    $(".modal-content").html(buildMoreHtmlOutput);
+};
+//console.log(songs);
+
 function displaySearchResults(songs) {
     var buildTheHtmlOutput = "";
     $.each(songs, function (index, response) {
+        songID = response.id;
+
+        var locationId = "onclick='displayModal(" + songID + ")'";
         //var locationId = "onclick='location.href=\"" + response.permalink_url + "\"'";
-        var locationId = "onclick='window.open(\"" + response.permalink_url + "\")'";
+        //var locationId = "onclick='window.open(\"" + response.permalink_url + "\")'";
+
         // append li to ul
         //buildTheHtmlOutput += "<li><p>" + response.title + "<a href='response.permalink_url'/></a>" + "</p></li>";
         //buildTheHtmlOutput += "<li><a href='" + response.permalink_url + "'>" + response.title + "</a></li>";
@@ -36,18 +75,31 @@ function displaySearchResults(songs) {
         buildTheHtmlOutput += "<img src='" + response.artwork_url + "' width='200' height='200' title='' alt=''/>";
         //buildTheHtmlOutput += "</a>";
         //buildTheHtmlOutput += "<a href='" + response.permalink_url + "'>";
-        //buildTheHtmlOutput += "<div id='button-center'>";
-        buildTheHtmlOutput += "<button id='playButton' type='button'" + locationId + ">";
+
+        /*-- Trying to creat button link to modal --*/
+
+
+        buildTheHtmlOutput += "<a href='#' " + locationId + " data-toggle='modal' data-target='#modal1'>";
         buildTheHtmlOutput += "&#9658; Play Track!";
+        buildTheHtmlOutput += "</a>";
+
+        /* -- Button redirecting to soundcloud url --*/
+
+        //buildTheHtmlOutput += "<button id='playButton' type='button'" + locationId + ">";
+        //buildTheHtmlOutput += "<button id='playButton' type='button' onclick=>";
+        /*buildTheHtmlOutput += "&#9658; Play Track!";
         buildTheHtmlOutput += "</button>";
-        //buildTheHtmlOutput += "</div>";
-        //buildTheHtmlOutput += "</a>";
+        buildTheHtmlOutput += "</a>";*/
         buildTheHtmlOutput += "</li>";
     });
     $("#search-results ul").html(buildTheHtmlOutput);
-};
+}
+/*
+});
 
-(function () {
+
+
+/*(function () {
 
     var AudioContext;
     var audio;
@@ -86,4 +138,4 @@ function displaySearchResults(songs) {
         //slider.value = 0;
     };
 
-})();
+})();*/
