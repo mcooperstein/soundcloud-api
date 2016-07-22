@@ -2,7 +2,12 @@
 
 $(document).ready(function () {
     $('#message').hide();
-
+    $("a[href='#page-top']").click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, "slow");
+        return false;
+    });
 });
 
 /*var app = angular.module('myApp', []);
@@ -74,9 +79,10 @@ function displayModal(songID) {
 
 function displaySearchResults(songs) {
     var buildTheHtmlOutput = "";
+
+
     $.each(songs, function (index, response) {
         songID = response.id;
-
         var locationId = "onclick='displayModal(" + songID + ")'";
         //var locationId = "onclick='location.href=\"" + response.permalink_url + "\"'";
         //var locationId = "onclick='window.open(\"" + response.permalink_url + "\")'";
@@ -94,7 +100,9 @@ function displaySearchResults(songs) {
         /*-- Trying to creat button link to modal --*/
 
 
-        buildTheHtmlOutput += "<a class='play-button page-scroll' href='#page-top' " + locationId + " data-toggle='modal' data-target='#modal1'>";
+        buildTheHtmlOutput += "<a class='play-button' href='#page-top' " + locationId + " data-toggle='modal' data-target='#modal1'>";
+        //buildTheHtmlOutput += "<a class='play-button' href='#' " + locationId + " data-toggle='modal' data-target='#modal1'>";
+        //buildTheHtmlOutput += "<a class='play-button' href='#' " + locationId + " data-toggle='modal' data-target='#modal1' target='#page-top'>";
         buildTheHtmlOutput += "&#9658; Play Track!";
         buildTheHtmlOutput += "</a>";
 
