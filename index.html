@@ -7,8 +7,6 @@
     <!-- Bootstrap Core CSS-->
     <link href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
-
 </head>
 
 <body ng-controller="MainController">
@@ -18,32 +16,25 @@
             <h1>Marc's Music Player<br><span id="fine-print">(using Soundcloud API)</span></h1>
             <img src="http://cdn.pitchfork.com/news/64436/26de78d5.png" width="250" height="100" alt="" id="artwork" />
         </header>
-
         <h2>Search for a Song or Artist on Soundcloud!</h2>
         <br>
-
         <div id="search-section">
             <input type="search" id="search">
-
             <button id="og-button" onclick="audioResults()">Search</button>
         </div>
-
         <div id="message">
             <h2>When you press play, that song will load on the page above the search results</h2>
         </div>
-
     </section>
+
     <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" style="display: block; padding-left: 0px;">
         <div class="modal-content"></div>
     </div>
-
 
     <div id="search-results">
         <ul id="results"></ul>
         <p id="error"></p>
     </div>
-
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
@@ -57,7 +48,6 @@
 
     <!-- Javascript file with API call -->
     <script type="text/javascript" src="js/app.js"></script>
-
 
 </body>
 
