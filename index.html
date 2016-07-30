@@ -22,15 +22,18 @@
             <input type="search" id="search">
             <button id="og-button" onclick="audioResults()">Search</button>
         </div>
+        <!-- Message that loads after user searches -->
         <div id="message">
             <h2>When you press play, that song will load on the page above the search results</h2>
         </div>
     </section>
 
+    <!-- Modal loads embeded song above search results when play button is clicked -->
     <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" style="display: block; padding-left: 0px;">
         <div class="modal-content"></div>
     </div>
 
+    <!-- Search Results populate here -->
     <div id="search-results">
         <ul id="results"></ul>
         <p id="error"></p>

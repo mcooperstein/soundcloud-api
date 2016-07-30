@@ -100,7 +100,7 @@ a.page-scroll {
 
 /* -- Media Queries --*/
 
-@media only screen and (max-width: 815px) {
+@media (max-width: 815px) {
     #search-results ul#results {
         overflow: hidden;
         margin-top: 0.5em;
@@ -143,7 +143,7 @@ a.page-scroll {
     }
 }
 
-@media only screen and (min-width: 816px) {
+@media (min-width: 816px) {
     #search-results ul#results {
         overflow: hidden;
         margin-top: 0.5em;
@@ -186,7 +186,7 @@ a.page-scroll {
     }
 }
 
-@media only screen and (min-width: 1216px) {
+@media (min-width: 1216px) {
     #search-results ul#results {
         overflow: hidden;
         margin-top: 0.5em;

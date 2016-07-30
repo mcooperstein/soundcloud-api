@@ -14,6 +14,8 @@ var songs = "";
 var songID = "";
 
 function audioResults() {
+    //uses xhr api to retrieve data from soundcloud
+    //jsonParse parses the data as a JSON object
     var search = document.getElementById("search").value;
     var xhr = new XMLHttpRequest();
     var jsonParse = "";
@@ -30,8 +32,7 @@ function audioResults() {
     $("#message").show();
 }
 
-//using the JSON response (songs), populate the relevant part of your HTML with the variable inside the JSON
-
+//function embeds the song in the webpage using added HTML content
 function displayModal(songID) {
 
     //console.log(songs);
@@ -60,6 +61,8 @@ function displayModal(songID) {
     $(".modal-content").html(buildMoreHtmlOutput);
 };
 //console.log(songs);
+
+//using the JSON response (songs), function populates the relevant search results as part of the HTML with the variable buildTheHtmlOutput
 
 function displaySearchResults(songs) {
     var buildTheHtmlOutput = "";
