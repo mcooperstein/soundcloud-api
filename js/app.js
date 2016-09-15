@@ -48,7 +48,6 @@ function displayModal(songID) {
                 $(".embeded").html(res.html);
             });
             buildMoreHtmlOutput += "<div class='embeded'>";
-            //buildMoreHtmlOutput += '<iframe src=" ' + value.permalink_url + ' " sandbox="allow-scripts allow-forms" style="border:0px #FFFFFF none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="60%" width="80%"></iframe>';
             buildMoreHtmlOutput += "</div>";
             buildMoreHtmlOutput += "<div class='footer'>";
             buildMoreHtmlOutput += "<button type='button' class='close-button' data-dismiss='modal'>";
@@ -69,23 +68,14 @@ function displaySearchResults(songs) {
 
     $.each(songs, function (index, response) {
         songID = response.id;
-
         var locationId = "onclick='displayModal(" + songID + ")'";
         buildTheHtmlOutput += "<li>";
         buildTheHtmlOutput += "<p>" + response.title + "</p>";
         buildTheHtmlOutput += "<img src='" + response.artwork_url + "' width='200' height='200' title='' alt=''/>";
-        /*-- Trying to have play button scroll to modal --*/
         buildTheHtmlOutput += "<a class='play-button' href='#page-top' " + locationId + " data-toggle='modal' data-target='#modal1'>";
         buildTheHtmlOutput += "&#9658; Play Track!";
         buildTheHtmlOutput += "</a>";
         buildTheHtmlOutput += "</li>";
-        /* -- Previous mehtod with Button redirecting to soundcloud url --*/
-        //var locationId = "onclick='window.open(\"" + response.permalink_url + "\")'";
-        //buildTheHtmlOutput += "<button id='playButton' type='button'" + locationId + ">";
-        //buildTheHtmlOutput += "<button id='playButton' type='button' onclick=>";
-        /*buildTheHtmlOutput += "&#9658; Play Track!";
-        buildTheHtmlOutput += "</button>";
-        buildTheHtmlOutput += "</a>";*/
     });
     $("#search-results ul").html(buildTheHtmlOutput);
 }
